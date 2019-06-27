@@ -8,7 +8,7 @@ namespace Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class UserController : ControllerBase
     {
         // GET api/values
         [HttpGet]
@@ -26,8 +26,9 @@ namespace Server.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult<IEnumerable<string>> Post([FromForm] string username, [FromForm] string password)
         {
+            return  new string[] { username, password };
         }
 
         // PUT api/values/5
