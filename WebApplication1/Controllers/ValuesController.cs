@@ -4,11 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Server.Controllers
+namespace WebApplication1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class ValuesController : ControllerBase
     {
         // GET api/values
         [HttpGet]
@@ -26,9 +26,8 @@ namespace Server.Controllers
 
         // POST api/values
         [HttpPost]
-        public ActionResult<IEnumerable<string>> Post([FromForm] string username, [FromForm] string password)
+        public void Post([FromBody] string value)
         {
-            return  new string[] { username, password };
         }
 
         // PUT api/values/5
